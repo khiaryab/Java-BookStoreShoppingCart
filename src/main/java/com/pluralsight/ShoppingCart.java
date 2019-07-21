@@ -2,6 +2,7 @@ package com.pluralsight;
 
 import java.util.ArrayList;
 import javax.inject.Inject;
+import java.lang.IndexOutOfBoundsException;
 
 public class ShoppingCart {
  @Inject
@@ -20,6 +21,14 @@ public class ShoppingCart {
 
  public void addCartItem(CartItem cartItem) {
   cartItems.add(cartItem);
+ }
+
+ public void deleteCartItem(int index) {
+   try {
+     this.cartItems.remove(index);
+   } catch(IndexOutOfBoundsException e) {
+     e.printStackTrace();
+   }
  }
 
  public CartItem getCartItem(int iItemIndex) {
