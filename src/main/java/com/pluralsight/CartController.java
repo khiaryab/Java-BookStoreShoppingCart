@@ -44,9 +44,9 @@ public class CartController extends HttpServlet {
 			switch(action) {
 				case "/addcart":
 					 addToCart(request, response);
-           break;
-        default:
-           break;
+           	break;
+        		default:
+           	break;
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
